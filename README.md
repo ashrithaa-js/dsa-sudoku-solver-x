@@ -1,4 +1,4 @@
-# SudokuSolveX
+# SudokuSolverX
 
 ## Overview
 Welcome to **SudokuSolveX**, the ultimate companion for puzzling enthusiasts! Whether you're a beginner or a seasoned solver, this app is designed to help you solve Sudoku puzzles effortlessly. With an intuitive interface, a timer feature, and customizable difficulty levels, it ensures that solving Sudoku is as fun as it is satisfying. The app uses efficient backtracking algorithms to solve puzzles, offering real-time feedback and a smooth user experience.
