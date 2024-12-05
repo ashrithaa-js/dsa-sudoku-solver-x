@@ -11,7 +11,7 @@ class SudokuSolver:
         self.createWidgets()
 
     def createWidgets(self):
-        self.frame = tk.Frame(self.root, bg="#f0f4f8")
+        self.frame = tk.Frame(self.root, bg="#f8d9d9")  # Light pink background
         self.frame.pack(pady=30)
 
         self.cells = [[tk.Entry(self.frame, width=4, font=("Helvetica", 18), justify="center", relief="flat", bd=1, bg="#ffffff", fg="#333333", highlightthickness=2, highlightbackground="#ffb3b3")
@@ -21,14 +21,14 @@ class SudokuSolver:
             for j in range(9):
                 self.cells[i][j].grid(row=i, column=j, padx=(5 if j % 3 == 0 else 1), pady=(5 if i % 3 == 0 else 1))
 
-        self.buttonsFrame = tk.Frame(self.root, bg="#f0f4f8")
+        self.buttonsFrame = tk.Frame(self.root, bg="#f8d9d9")  # Light pink background
         self.buttonsFrame.pack(pady=20)
 
         tk.Button(self.buttonsFrame, text="Generate", command=self.generateSudoku, font=("Helvetica", 14), bg="#ff9999", fg="#4a4a4a", relief="flat", padx=15, pady=8, borderwidth=2, highlightbackground="#ff6666").grid(row=0, column=0, padx=10)
         tk.Button(self.buttonsFrame, text="Solve", command=self.solveSudoku, font=("Helvetica", 14), bg="#66cc66", fg="#4a4a4a", relief="flat", padx=15, pady=8, borderwidth=2, highlightbackground="#4dff4d").grid(row=0, column=1, padx=10)
         tk.Button(self.buttonsFrame, text="Clear", command=self.clearGrid, font=("Helvetica", 14), bg="#66b3ff", fg="#4a4a4a", relief="flat", padx=15, pady=8, borderwidth=2, highlightbackground="#4d9eff").grid(row=0, column=2, padx=10)
 
-        self.difflabel = tk.Label(self.buttonsFrame, text="Difficulty  ", font=("Helvetica", 14), bg="#f0f4f8", fg="#4a4a4a")
+        self.difflabel = tk.Label(self.buttonsFrame, text="Difficulty  ", font=("Helvetica", 14), bg="#f8d9d9", fg="#4a4a4a")  # Light pink background
         self.difflabel.grid(row=1, column=0, padx=20, pady=12)
 
         self.diff = tk.StringVar()
@@ -38,6 +38,7 @@ class SudokuSolver:
         self.menu.grid(row=1, column=1, padx=10, pady=10)
 
         self.frame.pack_propagate(False)
+        self.root.configure(bg="#f8d9d9")  # Set the entire root background to light pink
 
     def generateSudoku(self):
         self.grid = self.generateValidSudoku()
@@ -145,7 +146,6 @@ class SudokuSolver:
         return True
 
 if __name__ == "__main__":
-    root = tk.Tk()  # This creates the Tkinter root window.
-    app = SudokuSolver(root)  # Pass the root window to the SudokuSolver constructor.
-    root.mainloop()  # Starts the Tkinter event loop.
-
+    root = tk.Tk()  
+    app = SudokuSolver(root)  
+    root.mainloop()  
